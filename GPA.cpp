@@ -3,10 +3,11 @@
 #include <sstream>
 #include <vector>
 using namespace std;
-int main() {
+int main(){
   ifstream file;
   string data;
   float gpa = 0;
+  float room = 0;
   file.open("major.gpa.txt");
 //  getline(file, data);
   while(getline(file, data)){
@@ -17,6 +18,8 @@ int main() {
       cout << subs << "\n";
       if (subs == "CP"){
         gpa = gpa + 0;
+        room = room + 1;
+      }
       if (subs == "HN"){
         gpa = gpa + 0.5;
       }
@@ -37,10 +40,12 @@ int main() {
       }
     }
     while(iss);
+    }
 //    cout << data;
 //    cout << "\n";
-  }
-  cout << gpa;
+
+  cout << gpa << "\n";
+  cout << (gpa / room);
   cout << "\n";
   file.close();
   return 0;
