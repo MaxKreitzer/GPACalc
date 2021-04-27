@@ -13,11 +13,13 @@ int main(){
   string data;
   float gpa = 0;
   float room = 0;
-
+  string input;
+  cout << "Please input name of text file that has your courses and grades. Remember to have .txt at the end." << "\n";
+  cin >> input;
 // opens the .txt file and begins reading line by getline
 // also istringstream iss begins seperating the strings by their spaces and puts
 // them on seperate readable lines
-  file.open("major.gpa.txt");
+  file.open(input);
   while(getline(file, data)){
     istringstream iss(data);
     do{
